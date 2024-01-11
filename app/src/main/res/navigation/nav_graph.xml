@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/parentFragment"
+        android:name="com.enesas.multiplefragmentsinsinglefragmentyaninestedfragments.view.ParentFragment"
+        android:label="fragment_parent"
+        tools:layout="@layout/fragment_parent" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.enesas.multiplefragmentsinsinglefragmentyaninestedfragments.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_parentFragment"
+            app:destination="@id/parentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/childFragment1"
+        android:name="com.enesas.multiplefragmentsinsinglefragmentyaninestedfragments.view.ChildFragment1"
+        android:label="fragment_child1"
+        tools:layout="@layout/fragment_child1" >
+        <action
+            android:id="@+id/action_childFragment1_to_parentFragment"
+            app:destination="@id/parentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/childFragment2"
+        android:name="com.enesas.multiplefragmentsinsinglefragmentyaninestedfragments.view.ChildFragment2"
+        android:label="fragment_child2"
+        tools:layout="@layout/fragment_child2" >
+        <action
+            android:id="@+id/action_childFragment2_to_parentFragment"
+            app:destination="@id/parentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/childFragment3"
+        android:name="com.enesas.multiplefragmentsinsinglefragmentyaninestedfragments.view.ChildFragment3"
+        android:label="fragment_child3"
+        tools:layout="@layout/fragment_child3" >
+        <action
+            android:id="@+id/action_childFragment3_to_parentFragment"
+            app:destination="@id/parentFragment" />
+    </fragment>
+</navigation>
